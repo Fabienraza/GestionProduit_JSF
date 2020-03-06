@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+
+<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+	<head>
+		<title>Ajout produit</title>
+		<meta charset="utf-8"/>
+	</head>
+
+	<body>
+		<h:form>
+			<h:outputLabel> Nom Produit : </h:outputLabel>
+			<h:inputText value="#{gp.produit1.nomProduit}"></h:inputText>
+			
+			<h:outputLabel> Description : </h:outputLabel>
+			<h:inputText value="#{gp.produit1.descProduit}"></h:inputText>
+			
+			<h:outputLabel> Prix : </h:outputLabel>
+			<h:inputText value="#{gp.produit1.prixProduit}"></h:inputText>
+			
+			<h:commandButton value="Valider" action="#{gp.ajoutProduit()}"></h:commandButton>
+		</h:form>
+	</body>
+</html>
