@@ -8,25 +8,25 @@ import dao.MarqueDAO;
 @ManagedBean (name="gm")
 public class GestionMarque {
 	
-	Marque mark = new Marque();
+	Marque marque = new Marque();
 	IMarqueDAO access = new MarqueDAO();
 	
 	
 								/******************
 								 * GETTER ET SETTER
 								 ******************/
-	public Marque getMark() {
-		return mark;
+	public Marque getmarque() {
+		return marque;
 	}
 	
-	public void setMark(Marque mark) {
-		this.mark = mark;
+	public void setmarque(Marque marque) {
+		this.marque = marque;
 	}
 	
 	
 	
-	public String ajoutMarque(Marque mark) {
-		if (access.addMarque(mark) == 1)
+	public String ajoutMarque() {
+		if (access.addMarque(marque) == 1)
 			{
 			return "access";	
 			}
