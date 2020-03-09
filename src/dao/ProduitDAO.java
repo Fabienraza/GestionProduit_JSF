@@ -51,26 +51,12 @@ public class ProduitDAO implements IProduitDAO {
 			System.out.println("Erreur dans la recupération de la liste des produits");
 			return null;
 		}
-	}
-	
+	}	
+}
+
 
 /************************************************************************************************
  * Methode pour afficher la liste des produits présent dans la base de donnée suivant leur marque
  ************************************************************************************************/
 
-	
-	
-	@Override
-	public List<Produit> getPoducts(Marque marque) {
-		try {
 
-			
-			return null;
-		} catch (HibernateException e) {
-			e.printStackTrace();
-			System.out.println("Erreur dans la recupération de la liste des produits suivant leur marque");
-			return null;
-		}
-	}
-
-}

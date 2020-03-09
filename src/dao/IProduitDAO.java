@@ -8,5 +8,5 @@ import model.Produit;
 public interface IProduitDAO {
 	public int saveProduct(Produit p);
 	public List<Produit> getProducts();
-	public List<Produit> getPoducts(Marque marque);
+	//public List<Produit> getPoducts(Marque marque);
 }

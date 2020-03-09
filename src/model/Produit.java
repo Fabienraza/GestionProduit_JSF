@@ -94,6 +94,14 @@ public class Produit {
 
 	
 	
+	public Marque getMarque() {
+		return marque;
+	}
+
+	public void setMarque(Marque marque) {
+		this.marque = marque;
+	}
+
 								/*********************
 								 * METHODE TO STRING() 
 								 ********************/

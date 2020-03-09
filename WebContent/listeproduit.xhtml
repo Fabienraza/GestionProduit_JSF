@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core">
 	<head>
 		<title>Liste des produits</title>
 		<meta charset="utf-8"/>
@@ -12,7 +12,7 @@
 			<ui:repeat value="#{gp.getProduits()}" var="listeProd">
 				<h5>#{listeProd.idProduit}</h5>
 				<h5>#{listeProd.nomProduit}</h5>
-				<h5>#{listePrdo.descProduit}</h5>
+				<h5>#{listeProd.descProduit}</h5>
 				<h5>#{listeProd.prixProduit}</h5>
 			</ui:repeat>
 		</h:form>

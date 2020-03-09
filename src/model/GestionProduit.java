@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
+import dao.IMarqueDAO;
 import dao.IProduitDAO;
+import dao.MarqueDAO;
 import dao.ProduitDAO;
 
 
@@ -25,6 +27,8 @@ public class GestionProduit {
 	private Produit produit1 = new Produit();
 	private IProduitDAO dao  = new ProduitDAO();
 	
+	private Marque m = new Marque();
+	
 
 								/******************
 								 * GETTER ET SETTER
@@ -36,12 +40,23 @@ public class GestionProduit {
 	public void setProduit1(Produit produit1) {
 		this.produit1 = produit1;
 	}
+	
 
-						
+	public Marque getM() {
+		return m;
+	}
+
+	
+	public void setM(Marque m) {
+		this.m = m;
+	}
+
 							/*********************************
 							 * METHODE POUR AJOUTER UN PRODUIT
 							 *********************************/
 	public String ajoutProduit() {
+		produit1.setMarque(m);
+		dao.saveProduct(produit1);
 		if(dao.saveProduct(produit1) == 1)
 			{
 			return "success";		
@@ -52,9 +67,15 @@ public class GestionProduit {
 	}
 	
 	
-	
+							/*********************************************
+							 * METHODE POUR AFFICHER LA LISTE DES PRODUITS
+							 ********************************************/
 	public List<Produit> getProduits() {
 		IProduitDAO dao = new ProduitDAO();
 		return dao.getProducts();
 	}
+	
 }
+
+
+

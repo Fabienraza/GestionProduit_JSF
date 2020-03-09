@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+
+<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+	<head>
+		<title>Liste des marques</title>
+		<meta charset="utf-8"/>
+	</head>
+
+	<body>
+		<h:form>
+			<ui:repeat value="#{gm.afficheMarques()}" var="listeMark">
+				<h5>#{listeMark.idMarque}</h5>
+				<h5>#{listeMark.nomMarque}</h5>
+				<h5>#{listeMark.dateCreation}</h5>
+			</ui:repeat>
+		</h:form>
+	</body>
+</html>

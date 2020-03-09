@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core">
 	<head>
 		<title>Ajout produit</title>
 		<meta charset="utf-8"/>
@@ -9,16 +9,21 @@
 
 	<body>
 		<h:form>
-			<h:outputLabel> Nom Produit : </h:outputLabel>
-			<h:inputText value="#{gp.produit1.nomProduit}"></h:inputText>
+			<h:outputLabel> Nom Produit : </h:outputLabel> <br/>
+			<h:inputText value="#{gp.produit1.nomProduit}"></h:inputText> <br/>
 			
-			<h:outputLabel> Description : </h:outputLabel>
-			<h:inputText value="#{gp.produit1.descProduit}"></h:inputText>
+			<h:outputLabel> Description : </h:outputLabel> <br/>
+			<h:inputText value="#{gp.produit1.descProduit}"></h:inputText> <br/>
 			
-			<h:outputLabel> Prix : </h:outputLabel>
-			<h:inputText value="#{gp.produit1.prixProduit}"></h:inputText>
+			<h:outputLabel> Prix : </h:outputLabel> <br/>
+			<h:inputText value="#{gp.produit1.prixProduit}"></h:inputText> <br/>
 			
-			<h:commandButton value="Valider" action="#{gp.ajoutProduit()}"></h:commandButton>
+			<h:outputLabel> Marque : </h:outputLabel> <br/>
+			<h:selectOneMenu value="#{gp.m.idMarque}"> 
+				<f:selectItems value ="#{gm.afficheMarques()}" var="l" itemValue="#{l.idMarque}" itemLabel="#{l.nomMarque}"> </f:selectItems>
+			</h:selectOneMenu> <br/>
+
+			<h:commandButton value="Valider" action="#{gp.ajoutProduit()}"></h:commandButton> <br/>
 		</h:form>
 	</body>
 </html>

@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -38,8 +39,19 @@ public class MarqueDAO implements IMarqueDAO {
  *********************************************************************************/
 	@Override
 	public List<Marque> getMarques() {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			List<Marque> tableau = new ArrayList<Marque>();
+			
+			SessionFactory factory = ConnexionDB.getInstance().getFactory();
+			Session s = ConnexionDB.getInstance().getSession();
+			s.beginTransaction();
+			tableau = s.createQuery("from Marque").list();
+			return tableau;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			System.out.println("Erreur dans la récupération de la liste des marques");
+			return null;
+		}
 	}
 
 }
