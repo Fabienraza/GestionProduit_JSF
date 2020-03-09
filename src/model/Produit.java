@@ -1,5 +1,6 @@
 package model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,6 +17,11 @@ public class Produit {
 	@Id
 	@GeneratedValue
 	private int idProduit;
+	
+/*
+ * @Column (nullable = false, unique = true) 
+ * Pour indiquer qu'une colonne de doit pas contenir des valeurs nulle et contient une valeur unique
+ */
 	private String nomProduit;
 	private String descProduit;
 	private double prixProduit;
@@ -89,7 +95,7 @@ public class Produit {
 	
 	
 								/*********************
-								 * METHODE TO STRING()
+								 * METHODE TO STRING() 
 								 ********************/
 	@Override
 	public String toString() {

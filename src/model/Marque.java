@@ -16,12 +16,16 @@ public class Marque {
 	
 	private String nomMarque;
 	
-
+	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
 	
-	
-	public Marque() {
 
+	
+								/*******************
+								 * LES CONSTRUCTEURS
+								 ******************/
+	public Marque() {
+		
 	}
 
 	public Marque(String nomMarque, Date dateCreation) {
@@ -30,6 +34,11 @@ public class Marque {
 	}
 
 
+	
+	
+								/******************
+								 * GETTER ET SETTER
+								 *****************/
 	public int getIdMarque() {
 		return idMarque;
 	}
@@ -59,7 +68,10 @@ public class Marque {
 		this.dateCreation = dateCreation;
 	}
 
-
+								
+									/*********************
+									 * METHODE TO STRING()
+									 *********************/
 	@Override
 	public String toString() {
 		return "Marque [idMarque=" + idMarque + ", nomMarque=" + nomMarque + ", dateCreation=" + dateCreation + "]";

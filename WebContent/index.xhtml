@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core">
 	<head>
 		<meta charset="utf-8"/>
 		<title>home page</title>
@@ -10,9 +10,10 @@
 		<h1>#{Maclasse.message}</h1>
 		
 		<!-- Lien pour envoyer vers une autre page -->
-		<a href="createproduct"> ajouter un produit </a>
+		<h:link value = "ajouter un produit" outcome="createproduct.xhtml"></h:link> <BR/>
 
-	
+		<h:link value = "afficher la liste des produits" outcome="listeproduit.xhtml"></h:link>  <BR/>
+
 	
 	</body>
 </html>

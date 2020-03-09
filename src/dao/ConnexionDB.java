@@ -6,16 +6,18 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
+
+							/********************************************************
+							 * CLASSE PERMETTANT LA CONNEXION AVEC LA BASE DE DONNEE
+							 ********************************************************/
 /*
  * Classe permettant la connexion avec la base de donnée
  * Nécessite l'implémentation de la dépendance Hibernate dans l'onglet "lib"
+ * Utilise le design pattern "singleton" pour eviter la creation de plusieurs objet connexion dans le programme
  */
 
 public class ConnexionDB {
 	
-								/***************
-								 * Les attributs
-								 ***************/
 	private SessionFactory sf = null;
 	private Session s = null;
 	private static ConnexionDB instance = null;
@@ -24,6 +26,11 @@ public class ConnexionDB {
 								/**************
 								 *Constructeur 
 								 **************/
+/*
+ * Le constructeur définie en private pur éviter la modification vers l'extérieur
+ * Nécessite la création de getter pour manipuler l'obje de l'extérieur
+ */
+	
 	private ConnexionDB() {
 	}
 	
@@ -60,7 +67,7 @@ public class ConnexionDB {
 						 * Methode getInstance() : pour établir la connexion
 						 *************************************************/
 	public static ConnexionDB getInstance() {
-		if(instance==null) {
+		if(instance == null) {
 			instance = new ConnexionDB();
 			System.out.println("Connexion établie");
 		}

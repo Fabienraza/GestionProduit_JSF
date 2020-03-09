@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+
+<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
+	<head>
+		<title>Liste des produits</title>
+		<meta charset="utf-8"/>
+	</head>
+
+	<body>
+		<h:form>
+			<ui:repeat value="#{gp.getProduits()}" var="listeProd">
+				<h5>#{listeProd.idProduit}</h5>
+				<h5>#{listeProd.nomProduit}</h5>
+				<h5>#{listePrdo.descProduit}</h5>
+				<h5>#{listeProd.prixProduit}</h5>
+			</ui:repeat>
+		</h:form>
+	</body>
+</html>

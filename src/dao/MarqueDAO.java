@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,7 +9,12 @@ import org.hibernate.SessionFactory;
 import model.Marque;
 
 public class MarqueDAO implements IMarqueDAO {
+	
+	
 
+/********************************************************************
+ * Methode permettant d'enregistrer une marque dans la base de donnée
+ ********************************************************************/
 	@Override
 	public int addMarque(Marque m) {
 		try {
@@ -22,6 +29,17 @@ public class MarqueDAO implements IMarqueDAO {
 			System.out.println("Erreur dans la methode addMarque()");
 			return 0;
 		}
+	}
+	
+	
+
+/*********************************************************************************
+ * Methode permettant l'affichage des marques enregistrées dans la base de donnnée
+ *********************************************************************************/
+	@Override
+	public List<Marque> getMarques() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

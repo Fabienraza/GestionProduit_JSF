@@ -13,14 +13,14 @@ public class MainTest {
 
 	public static void main(String[] args) {
 //		Produit p1 = new Produit("iPhone 8", "Telephone de la marque apple", 1000);
-//		IProduitDAO dao = new ProduitDAO();
-//		
-//		dao.saveProduct(p1);
-
-		Marque m1 = new Marque("apple",new Date());
-		IMarqueDAO acc = new MarqueDAO();
+		IProduitDAO dao = new ProduitDAO();
 		
-		acc.addMarque(m1);
+//		dao.saveProduct(p1);
+		System.out.println(dao.getProducts());
+//		Marque m1 = new Marque("apple",new Date());
+//		IMarqueDAO acc = new MarqueDAO();
+//		
+//		acc.addMarque(m1);
 	}
 
 }
