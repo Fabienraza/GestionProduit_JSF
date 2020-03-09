@@ -19,8 +19,7 @@ public class ProduitDAO implements IProduitDAO {
 	@Override
 	public int saveProduct(Produit p) {
 		try {
-			SessionFactory factory = ConnexionDB.getInstance().getFactory();
-			Session session = ConnexionDB.getInstance().getSession();
+			Session session = ConnexionDB.getInstance().getFactory().openSession();
 			session.beginTransaction();
 			session.save(p);
 			session.getTransaction().commit();
@@ -40,8 +39,7 @@ public class ProduitDAO implements IProduitDAO {
 	@Override
 	public List<Produit> getProducts() {
 		try {
-			SessionFactory factory = ConnexionDB.getInstance().getFactory();
-			Session session = ConnexionDB.getInstance().getSession();
+			Session session = ConnexionDB.getInstance().getFactory().openSession();
 			session.beginTransaction();
 			List<Produit> list = new ArrayList<Produit>();
 			list = session.createQuery("from Produit").list();

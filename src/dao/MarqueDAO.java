@@ -19,8 +19,7 @@ public class MarqueDAO implements IMarqueDAO {
 	@Override
 	public int addMarque(Marque m) {
 		try {
-			SessionFactory factory = ConnexionDB.getInstance().getFactory();
-			Session s = ConnexionDB.getInstance().getSession();
+			Session s = ConnexionDB.getInstance().getFactory().openSession();
 			s.beginTransaction();
 			s.save(m);
 			s.getTransaction().commit();
@@ -41,9 +40,8 @@ public class MarqueDAO implements IMarqueDAO {
 	public List<Marque> getMarques() {
 		try {
 			List<Marque> tableau = new ArrayList<Marque>();
-			
-			SessionFactory factory = ConnexionDB.getInstance().getFactory();
-			Session s = ConnexionDB.getInstance().getSession();
+
+			Session s = ConnexionDB.getInstance().getFactory().openSession();
 			s.beginTransaction();
 			tableau = s.createQuery("from Marque").list();
 			return tableau;

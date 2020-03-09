@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+
+<html xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core">
+	<head>
+		<title>Création compte</title>
+		<meta charset="utf-8"/>
+	</head>
+
+	<body>
+		<h:form>
+			<h2>CONNEXION</h2>
+					
+			<h:outputLabel> Identifiant : </h:outputLabel> <br/>
+			<h:inputText value="#{gu.user.identifiant}"></h:inputText> <br/>
+			
+			<h:outputLabel> Mot de passe : </h:outputLabel> <br/>
+			<h:inputSecret value="#{gu.user.password}"></h:inputSecret> <br/>
+
+			<h:commandButton value="Connexion" action="#{gu.verifUser()}"></h:commandButton> <br/>
+		</h:form>
+	</body>
+</html>

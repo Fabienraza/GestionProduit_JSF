@@ -63,7 +63,6 @@ public class GestionProduit {
 			}
 		else
 			return "failed";
-		
 	}
 	
 	
