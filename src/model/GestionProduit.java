@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -71,7 +72,9 @@ public class GestionProduit {
 							 ********************************************/
 	public List<Produit> getProduits() {
 		IProduitDAO dao = new ProduitDAO();
-		return dao.getProducts();
+		List<Produit> tableau = new ArrayList<Produit>();
+		tableau = dao.getProducts();
+		return tableau;
 	}
 	
 }

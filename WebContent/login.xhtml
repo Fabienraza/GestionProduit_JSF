@@ -5,6 +5,7 @@
 	<head>
 		<title>Création compte</title>
 		<meta charset="utf-8"/>
+		<link href="bootstrap.min.css" rel="stylesheet"/>
 	</head>
 
 	<body>
@@ -17,7 +18,8 @@
 			<h:outputLabel> Mot de passe : </h:outputLabel> <br/>
 			<h:inputSecret value="#{gu.user.password}"></h:inputSecret> <br/>
 
-			<h:commandButton value="Connexion" action="#{gu.verifUser()}"></h:commandButton> <br/>
+			<h:commandButton value="Connexion" action="#{gu.verifUser()}"></h:commandButton> 
+			<h:commandButton value="Créer un compte" action="creationcompte"></h:commandButton> <br/>
 		</h:form>
 	</body>
 </html>

@@ -61,7 +61,6 @@ public class GestionUtilisateur {
 			}
 		}
 		return "failed";
-		
 	}
 	
 	

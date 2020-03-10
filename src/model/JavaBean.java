@@ -9,7 +9,7 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean (name="Maclasse")	
 public class JavaBean {
-	private String message = "Bienvenue sur la page d'accueil";
+	private String message = "Bienvenue sur la page d'accueil de E-Commerce";
 
 	
 								/*******************

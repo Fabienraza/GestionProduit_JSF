@@ -38,6 +38,7 @@ public class UtilisateurDAO implements IUtilisateurDAO{
 	 *************************************************************************/
 	public List<Utilisateur> getUserList() {
 		List<Utilisateur>liste = new ArrayList<Utilisateur>();
+		
 		try {
 			Session s = ConnexionDB.getInstance().getFactory().openSession();
 			s.beginTransaction();
@@ -48,7 +49,6 @@ public class UtilisateurDAO implements IUtilisateurDAO{
 			System.out.println("Erreur dans la récupération de la liste des utilisateurs");
 			return null;
 		}
-
 	}
 	
 }
